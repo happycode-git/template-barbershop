@@ -3,7 +3,7 @@ import { RxHamburgerMenu } from 'react-icons/rx'
 // 
 import '../STYLESHEETS/Contact.css'
 import logo from '../PHOTOS/stock.png'
-import img1 from '../PHOTOS/shop.jpg'
+import img1 from '../PHOTOS/barber4.jpeg'
 import Footer from './UTILITIES/Footer'
 import Navigation from './UTILITIES/Navigation'
 import { Link } from 'react-router-dom'
@@ -104,23 +104,23 @@ export default function Contact() {
             </div>
             {/* BODY */}
             <div className="contact font1">
-                <h1 className='page-title'>Contact Us</h1>
+                <h1 className='page-title color3'>Contact Us</h1>
                 <p className='contact-info'>Keep in touch by reaching out to us using this form or any of our contact methods.</p>
                 <div className='contact-wrap'>
                     <div className='contact-left'>
                         <div className='contact-split'>
                             <div className='contact-pair'>
                                 <label>Your name</label>
-                                <input id="tbName" className={`border2 no-bg ${missingInfo ? "border-red" : ""}`} type="text" placeholder='John Doe' />
+                                <input id="tbName" className={`bg2 no-border ${missingInfo ? "border-red" : ""}`} type="text" placeholder='John Doe' />
                             </div>
                             <div className='contact-pair'>
                                 <label>Your email</label>
-                                <input id="tbEmail" className={`border2 no-bg ${missingInfo ? "border-red" : ""}`} type="email" placeholder='jdoe@happy.com' />
+                                <input id="tbEmail" className={`no-border bg2 ${missingInfo ? "border-red" : ""}`} type="email" placeholder='jdoe@happy.com' />
                             </div>
                         </div>
                         <div className='contact-pair'>
                             <label>Reason for contact</label>
-                            <select className={`border2 no-bg ${missingInfo ? "border-red" : ""}`} id='ddReason'>
+                            <select className={`no-border bg2 ${missingInfo ? "border-red" : ""}`} id='ddReason'>
                                 <option>Question</option>
                                 <option>Comment</option>
                                 <option>Concern</option>
@@ -128,20 +128,20 @@ export default function Contact() {
                         </div>
                         <div className='contact-pair'>
                             <label>Your message</label>
-                            <textarea id="taMessage" className={`border2 no-bg ${missingInfo ? "border-red" : ""}`} placeholder='Leave a message here...'></textarea>
+                            <textarea id="taMessage" className={`no-border bg2 ${missingInfo ? "border-red" : ""}`} placeholder='Leave a message here...'></textarea>
                         </div>
-                        <button className='bg1 color2 no-border' onClick={sendForm}>Send</button>
+                        <button className='bg3 color2 no-border' onClick={sendForm}>Send</button>
                     </div>
                     <div className='contact-right'>
                         <div className='contact-methods'>
                             <div className='contact-method'>
-                                <AiTwotonePhone className='contact-icon' /><p>123 456 7890</p>
+                                <AiTwotonePhone className='contact-icon color3' /><p>123 456 7890</p>
                             </div>
                             <div className='contact-method'>
-                                <AiFillMail className='contact-icon' /><p>happycode.inbox@gmail.com</p>
+                                <AiFillMail className='contact-icon color3' /><p>happycode.inbox@gmail.com</p>
                             </div>
                             <div className='contact-method'>
-                                <FaMapMarkerAlt className='contact-icon' /><p>1234 Everything St, Bagel City CA, 12345</p>
+                                <FaMapMarkerAlt className='contact-icon color3' /><p>1234 Everything St, Bagel City CA, 12345</p>
                             </div>
                         </div>
                         <img src={img1} />

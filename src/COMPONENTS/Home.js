@@ -7,12 +7,13 @@ import { RxHamburgerMenu } from 'react-icons/rx'
 import logo from '../PHOTOS/stock.png'
 import img1 from '../PHOTOS/shop.jpg'
 // 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Footer from './UTILITIES/Footer'
 import Navigation from './UTILITIES/Navigation'
 import { firebaseGetPageViews } from '../FIREBASE/firebase'
 
 export default function Home() {
+    const navigate = useNavigate()
     function openNav() {
         if (window.innerWidth < 600) {
             document.querySelector(".nav-body").style.width = "100vw";
@@ -41,23 +42,23 @@ export default function Home() {
             <Navigation />
             <div className='top'>
                 <Link to="/"><img src={logo} /></Link>
-                <RxHamburgerMenu className='top-icon' onClick={openNav} />
+                <RxHamburgerMenu className='top-icon ' onClick={openNav} />
             </div>
             {/* BODY */}
             <div className="home font1">
                 <div className='home-panel1'>
                     <div>
-                        <h1>Everything is in a bagel, and a bagel is in everything.</h1>
+                        <h1 className=''><span className='color3'>Barber Knights</span>,<br/> fresh haircuts and shaves.</h1>
                         <div className='home-panel1-img'></div>
                     </div>
                     <div className='home-right'>
                         <div className='home-panel1-img-right'></div>
                         <div className='home-panel1-right-info'>
-                            <h2 className='home-panel1-sub'>Everything bagel, now.</h2>
+                            <h2 className='home-panel1-sub color3'>A clean cut is everything.</h2>
                             <p className='home-panel1-text'>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a.
+                                Walk out our doors completely satisfied with a fresh look and outstanding experience. Barber Knights are tasked to perform art with our barber tools. We take it to the next level.
                             </p>
-                            <button className='home-panel1-btn border2 color1 no-bg'>Order Now</button>
+                            <button onClick={() => {navigate('/schedule')}} className='home-panel1-btn border-red color3 no-bg'>Schedule Now</button>
                         </div>
                     </div>
                 </div>

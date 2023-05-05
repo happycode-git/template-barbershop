@@ -88,6 +88,7 @@
         z-index: 100;
     }
     .schedule-admin-form-wrap {
+        display: block;
         padding: 1em;
         max-width: 450px;
         margin: 2em auto
@@ -140,7 +141,13 @@
     }
 }
 
-@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 600px) {
+    .schedule-admin-form-wrap {
+        display: block;
+        width: 450px;
+        margin: 2em auto;
+    }
+}
 
 @media only screen and (min-width: 800px) {
     .schedule-admin {
@@ -160,6 +167,7 @@
     }
 
     .schedule-admin-wrap {
+        display: block;
         max-height: 60vh;
         overflow-y: scroll;
         min-height: 60vh;

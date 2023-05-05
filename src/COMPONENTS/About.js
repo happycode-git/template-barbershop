@@ -41,38 +41,28 @@ export default function About() {
             </div>
             {/* BODY */}
             <div className="about font1">
-                <h1 className='page-title'>About Us</h1>
+                <h1 className='page-title color3'>About Us</h1>
                 <div className='about-wrap'>
                     <div className='about-section'>
                         <div>
-                            <h2 className='about-sub'>Everything Bagel</h2>
+                            <h2 className='about-sub'>Bringing Back the Classic Barber Shop Experience: Introducing Barber Knights.</h2>
                             <div className='about-img'></div>
                         </div>
                         <div className='about-text'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>
+                            <p>Barber Knights is a barbershop that has been serving the community for over a decade. Located in the heart of downtown, they are known for their top-notch grooming services and welcoming environment. Their team of experienced barbers takes pride in providing excellent services that cater to various hair types and styles.</p>
+                            <p>The barbers at Barber Knights are skilled in their craft, with years of experience under their belts. They stay up to date with the latest trends and techniques in grooming, ensuring that their customers receive the best possible service. Whether it's a classic haircut, a hot towel shave, or a beard trim, their barbers are equipped to handle any request. </p>
+                            <p>Barber Knights is more than just a place to get a haircut. It's a community hub where customers can socialize, relax, and unwind. The shop has a comfortable and inviting atmosphere, with vintage decor and comfortable seating. Customers are welcomed with a smile and offered a beverage while they wait for their appointment. </p>
                         </div>
                     </div>
                     <div className='about-section'>
-                        <div>
-                            <h2 className='about-sub'>Everything Bagel</h2>
-                        </div>
+                        
                         <div className='about-text'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>
+                            <p>At Barber Knights, customer satisfaction is the top priority. Their barbers take the time to listen to each customer's needs and offer suggestions based on their hair type, face shape, and personal style. They go the extra mile to ensure that every customer leaves feeling confident and refreshed. Barber Knights has built a loyal following of customers who appreciate their attention to detail and commitment to quality.</p>
+                            <p>In summary, Barber Knights is a barbershop that offers top-notch grooming services in a friendly and welcoming environment. With their experienced barbers and range of services, they cater to various hair types and styles. Customers can enjoy traditional and modern haircuts, beard grooming, hot towel shaves, hair coloring, and kids haircuts at Barber Knights. Book your appointment today and experience their excellent services for yourself.</p>
                         </div>
-                    </div>
-                    <div className='about-section'>
                         <div>
-                            <h2 className='about-sub'>Everything Bagel</h2>
-                            <div className='about-img'></div>
-                        </div>
-                        <div className='about-text'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan. Sed ullamcorper tortor justo, vel aliquam nisi suscipit a. </p>
+                            <h2 className='about-sub'>Join the Brotherhood: Experience the Welcoming Atmosphere of Barber Knights</h2>
+                            <div className='about-img2'></div>
                         </div>
                     </div>
                 </div>

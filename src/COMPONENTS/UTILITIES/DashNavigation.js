@@ -7,6 +7,7 @@ import logo from '../../PHOTOS/stock.png'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { firebaseSignOut } from '../../FIREBASE/firebase'
+import { c_businessName } from '../../Constants'
 
 export default function DashNavigation() {
     const dispatch = useDispatch()
@@ -45,7 +46,7 @@ export default function DashNavigation() {
                 <br />
                 <button onClick={() => { firebaseSignOut(dispatch); navigate('/login') }} className='dash-out no-bg no-border red'>Sign Out</button>
             </div>
-            <p className='copy font1 color1'>&copy; Happy Code 2023. All Rights Reserved.</p>
+            <p className='copy font1 color1'>&copy; {c_businessName}. All Rights Reserved.</p>
         </div>
     )
 }

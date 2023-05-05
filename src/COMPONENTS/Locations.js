@@ -42,7 +42,7 @@ export default function History() {
             </div>
             {/* BODY */}
             <div className="locations font1">
-                <h1 className='page-title'>Locations & Hours</h1>
+                <h1 className='page-title color3'>Locations & Hours</h1>
                 <div className='location-pair'>
                     <div className='location-pair-split'>
                         <div>

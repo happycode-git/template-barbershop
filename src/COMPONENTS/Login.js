@@ -55,7 +55,7 @@ export default function Login() {
             <Navigation />
             <div className='top'>
                 <Link to="/"><img src={logo} /></Link>
-                <RxHamburgerMenu className='top-icon' onClick={openNav} />
+                <RxHamburgerMenu className='top-icon color4' onClick={openNav} />
             </div>
             {/* BODY */}
             <div className="login font1">
@@ -63,13 +63,13 @@ export default function Login() {
                 <div className='login-wrap'>
                     <div className='login-pair'>
                         <label>Email:</label>
-                        <input className='border2 no-bg' type="text" id="tbEmail" placeholder='jdoe@happycode.com' />
+                        <input className='color2 border2 no-bg' type="text" id="tbEmail" placeholder='jdoe@happycode.com' />
                     </div>
                     <div className='login-pair'>
                         <label>Password:</label>
                         <input className='border2 no-bg' type="password" id="tbPass" placeholder='********' />
                     </div>
-                    <button onClick={login} className='login-btn color2 bg1 no-border'>Let's Go</button>
+                    <button onClick={login} className='login-btn color2 bg3 no-border'>Let's Go</button>
                     <p className="login-error red">{showError ? errorMsg : ""}</p>
                 </div>
             </div>

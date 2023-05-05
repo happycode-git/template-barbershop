@@ -52,23 +52,23 @@ export default function About() {
 
             <div className='top'>
                 <Link to="/login"><img src={logo} /></Link>
-                <RxHamburgerMenu className='top-icon' onClick={openNav} />
+                <RxHamburgerMenu className='top-icon color4' onClick={openNav} />
             </div>
             <div className='dashboard'>
-                <h1 className='page-title-sm dashboard-head'>Dashboard</h1>
+                <h1 className='page-title-sm dashboard-head color3'>Dashboard</h1>
                 <div className='dashboard-wrap'>
                     {/* COMPONENTS */}
-                    <span className='dash-comp col1 bg2'>
+                    <span className='dash-comp col1 bg1 border-red'>
                         <h1>Page Views</h1>
                         <p className='dash-comp-desc'>Discover which pages are getting the most views. This will determine which pages need to be optimized more often.</p>
                         <div className='page-views'>
                             {
                                 pageViewPages.map((page, i) => {
                                     return (
-                                        <div key={i} className='dash-pageviews-block separate border2'>
+                                        <div key={i} className='dash-pageviews-block color2 separate'>
                                             <h3>{page.Name}</h3>
                                             <div className='flex'>
-                                                <p className=''>{page.Views}</p>
+                                                <p className='color2'>{page.Views}</p>
                                                 <VscEye color="" />
                                             </div>
                                         </div>
@@ -77,24 +77,24 @@ export default function About() {
                             }
                         </div>
                     </span>
-                    <span className='dash-comp col3 bg2'>
+                    <span className='dash-comp col3 bg1 border-red'>
                         <h1>Contact Entries</h1>
                         <p className='dash-comp-desc'>These are the entries that are submitted by your users. All entries are filtered by Date.</p>
                         <table className='dash-contact-table'>
                             <tr>
-                                <th className='bg1 color2'>Name</th>
-                                <th className='bg1 color2'>Email</th>
-                                <th className='bg1 color2'>Reason</th>
-                                <th className='bg1 color2 dash-contact-msg'>Message</th>
+                                <th className='bg1 color2 border1'>Name</th>
+                                <th className='bg1 color2 border1'>Email</th>
+                                <th className='bg1 color2 border1'>Reason</th>
+                                <th className='bg1 color2 border1 dash-contact-msg'>Message</th>
                             </tr>
                             {
                                 contactEntries.map((entry, i) => {
                                     return (
                                         <tr key={i} className="">
-                                            <td>{entry.Name}</td>
-                                            <td>{entry.Email}</td>
-                                            <td>{entry.Reason}</td>
-                                            <td className='dash-contact-msg'>{entry.Message}</td>
+                                            <td className='border1'>{entry.Email}</td>
+                                            <td className='border1'>{entry.Name}</td>
+                                            <td className='border1'>{entry.Reason}</td>
+                                            <td className='border1 dash-contact-msg'>{entry.Message}</td>
                                         </tr>
                                     )
                                 })

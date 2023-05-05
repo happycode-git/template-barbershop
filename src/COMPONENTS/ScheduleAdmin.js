@@ -169,7 +169,7 @@ export default function ScheduleAdmin() {
             <DashNavigation />
             <div className='top'>
                 <Link to="/login"><img src={logo} /></Link>
-                <RxHamburgerMenu className='top-icon' onClick={openNav} />
+                <RxHamburgerMenu className='top-icon color4' onClick={openNav} />
             </div>
             {/* BODY */}
             {
@@ -225,17 +225,17 @@ export default function ScheduleAdmin() {
                     <input type="date" className='schedule-admin-date border2' id="dpDay" />
                     <br />
                     <br />
-                    <button onClick={getDate} className='schedule-admin-btn bg1 color2 no-border'>Get Scheduled Appointments</button>
+                    <button onClick={getDate} className='schedule-admin-btn bg3 color2 no-border'>Get Scheduled Appointments</button>
                     <br />
                     <br />
-                    <button onClick={() => { setShowForm(true) }} className='no-border no-bg schedule-admin-create'>Create New Appointment Type</button>
+                    <button onClick={() => { setShowForm(true) }} className='color2 no-border no-bg schedule-admin-create'>Create New Appointment Type</button>
                 </div>
                 <div className='schedule-admin-wrap'>
                     <div className='schedule-admin-times'>
                         {
                             myScheduledEvents.map((eve, i) => {
                                 return (
-                                    <div className={`schedule-admin-eve ${eve.Start.seconds > current ? "border2 border-green" : "border3 bg3 color3"}`} key={i}>
+                                    <div className={`schedule-admin-eve ${eve.Start.seconds > current ? "color2 border-green" : "border1 bg1 color3"}`} key={i}>
                                         <div className='separate'>
                                             <div>
                                                 <h2>{eve.Name}</h2>

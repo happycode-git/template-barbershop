@@ -220,11 +220,11 @@ export default function Schedule() {
             <Navigation />
             <div className='top'>
                 <Link to="/"><img src={logo} /></Link>
-                <RxHamburgerMenu className='top-icon' onClick={openNav} />
+                <RxHamburgerMenu className='top-icon color4' onClick={openNav} />
             </div>
             {/* BODY */}
             <div className="schedule font1">
-                <h1 className='page-title'>Schedule</h1>
+                <h1 className='page-title color3'>Schedule</h1>
                 <br />
                 {
                     showDetails ?
@@ -282,16 +282,16 @@ export default function Schedule() {
                         }
                         {
                             chosenService.Type != undefined ?
-                                <p className='type-desc bg3 color1'>{chosenService.Desc}</p> : <div></div>
+                                <p className='type-desc no-bg color2'>{chosenService.Desc}</p> : <div></div>
                         }
-                        <button className='schedule-pick-btn bg1 color2 no-border' onClick={getAvailableTimes}>Get Available Times</button>
+                        <button className='schedule-pick-btn color2 no-border bg3' onClick={getAvailableTimes}>Get Available Times</button>
                     </div>
                     <div className='schedule-right'>
                         {
                             slots.map((slot, i) => {
                                 return (
                                     <div className='schedule-slot' key={i}>
-                                        <button onClick={() => { chooseSlot(slot) }} className='border2 no-bg color3'>{slot}</button>
+                                        <button onClick={() => { chooseSlot(slot) }} className='border1 no-bg color2'>{slot}</button>
                                     </div>
                                 )
                             })

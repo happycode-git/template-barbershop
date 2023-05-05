@@ -41,8 +41,11 @@
         font-weight: 200;
         padding: 1em;
         font-size: 1.5em;
-        border-left: 3px solid #111;
+        border-left: 3px solid #E92628;
         margin: 1em 0;
+    }
+    .blogpost-wrap h4 {
+        font-size: 2em;
     }
     .blogpost-author {
         font-size: 1.2em;

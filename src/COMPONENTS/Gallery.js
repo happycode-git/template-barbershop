@@ -5,14 +5,28 @@ import '../STYLESHEETS/Gallery.css'
 import logo from '../PHOTOS/stock.png'
 import Footer from './UTILITIES/Footer'
 import Navigation from './UTILITIES/Navigation'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 // 
-import img1 from '../PHOTOS/car.jpg'
-import img2 from '../PHOTOS/city.jpg'
-import img3 from '../PHOTOS/van.jpg'
+import img1 from '../PHOTOS/barber1.jpeg'
+import img2 from '../PHOTOS/barber2.jpeg'
+import img3 from '../PHOTOS/barber3.jpeg'
+import img4 from '../PHOTOS/barber4.jpeg'
+import img5 from '../PHOTOS/barber5.jpeg'
+import img6 from '../PHOTOS/barber6.jpeg'
+import img7 from '../PHOTOS/barber7.jpeg'
+import img8 from '../PHOTOS/barber8.jpeg'
+import img9 from '../PHOTOS/barber9.jpeg'
+import img10 from '../PHOTOS/barber10.jpeg'
+import img11 from '../PHOTOS/barber11.jpeg'
+import img12 from '../PHOTOS/barber12.jpeg'
+
 import { firebaseGetPageViews } from '../FIREBASE/firebase'
+import { useDispatch } from 'react-redux'
+import {setPhotoState} from '../REDUX/SLICES/PhotoSlice'
 
 export default function Gallery() {
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
     function openNav() {
         if (window.innerWidth < 600) {
             document.querySelector(".nav-body").style.width = "100vw";
@@ -30,10 +44,85 @@ export default function Gallery() {
         document.querySelector(".nav-body").style.width = "0";
     }
 
+
     const images = [
-        img1, img1, img1, img1,
-        img2, img2, img2, img2,
-        img3, img3, img3, img3
+        {
+            Img: img1,
+            Alt: "This is the alt attribute for this image.",
+            Lens: "50mm",
+            Title: "Gloomy",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan."
+        },
+        {
+            Img: img2,
+            Alt: "This is the alt attribute for this image.",
+            Lens: "50mm",
+            Title: "Gloomy",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan."
+        },
+        {
+            Img: img4,
+            Alt: "This is the alt attribute for this image.",
+            Lens: "50mm",
+            Title: "Gloomy",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan."
+        },
+        {
+            Img: img5,
+            Alt: "This is the alt attribute for this image.",
+            Lens: "50mm",
+            Title: "Gloomy",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan."
+        },
+        {
+            Img: img3,
+            Alt: "This is the alt attribute for this image.",
+            Lens: "50mm",
+            Title: "Gloomy",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan."
+        },
+        {
+            Img: img6,
+            Alt: "This is the alt attribute for this image.",
+            Lens: "50mm",
+            Title: "Gloomy",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan."
+        },
+        {
+            Img: img7,
+            Alt: "This is the alt attribute for this image.",
+            Lens: "50mm",
+            Title: "Gloomy",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan."
+        },
+        {
+            Img: img9,
+            Alt: "This is the alt attribute for this image.",
+            Lens: "50mm",
+            Title: "Gloomy",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan."
+        },
+        {
+            Img: img10,
+            Alt: "This is the alt attribute for this image.",
+            Lens: "50mm",
+            Title: "Gloomy",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan."
+        },
+        {
+            Img: img11,
+            Alt: "This is the alt attribute for this image.",
+            Lens: "50mm",
+            Title: "Gloomy",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan."
+        },
+        {
+            Img: img12,
+            Alt: "This is the alt attribute for this image.",
+            Lens: "50mm",
+            Title: "Gloomy",
+            Desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan. Integer auctor nunc dui, ut vehicula turpis pretium accumsan."
+        },
     ]
 
     useEffect(() => {
@@ -51,12 +140,15 @@ export default function Gallery() {
             </div>
             {/* BODY */}
             <div className="gallery font1">
-                <h1 className='page-title'>Gallery</h1>
+                <h1 className='page-title color3'>Gallery</h1>
                 <div className='gallery-wrap'>
                     {
                         images.map((img, i) => {
                             return (
-                                <img src={img} className="gallery-img" />
+                                <img key={i} src={img.Img} alt={`${img.Alt}`} className="gallery-img" onClick={() => {
+                                    dispatch(setPhotoState(img));
+                                    navigate('/gallery-photo')
+                                }} />
                             )
                         })
                     }

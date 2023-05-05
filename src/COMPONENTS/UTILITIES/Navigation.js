@@ -4,9 +4,11 @@ import { TfiClose } from 'react-icons/tfi'
 import '../../STYLESHEETS/Navigation.css'
 // 
 import logo from '../../PHOTOS/stock.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { c_businessName } from '../../Constants'
 
 export default function Navigation() {
+    const navigate = useNavigate()
     function openNav() {
         if (window.innerWidth < 600) {
             document.querySelector(".nav-body").style.width = "100vw";
@@ -29,20 +31,20 @@ export default function Navigation() {
         window.scrollTo(0, 0)
     }, [])
     return (
-        <div className='nav-body bg2'>
+        <div className='nav-body bg1 color2'>
             <div className='nav-top'>
-                <img src={logo} />
-                <TfiClose className='nav-icon color1'  onClick={closeNav} />
+                <img onClick={() => { navigate('/') }} src={logo} />
+                <TfiClose className='nav-icon' onClick={closeNav} />
             </div>
             <div className='nav-links font1'>
-                <Link className='nav-link color1' to="/">Home</Link>
-                <Link className='nav-link color1' to="/about">About</Link>
-                <Link className='nav-link color1' to="/gallery">Gallery</Link>
-                <Link className='nav-link color1' to="/events">Events</Link>
-                <Link className='nav-link color1' to="/blog">Blog</Link>
-                <Link className='nav-link color1' to="/contact">Contact Us</Link>
+                <Link className='nav-link color2' to="/about">About Us</Link>
+                <Link className='nav-link color2' to="/services">Services</Link>
+                <Link className='nav-link color2' to="/team">Our Barbers</Link>
+                <Link className='nav-link color2' to="/gallery">Gallery</Link>
+                <Link className='nav-link color2' to="/blog">Blog</Link>
+                <Link className='nav-link color2' to="/contact">Contact Us</Link>
             </div>
-            <p className='copy font1 color1'>&copy; Happy Code 2023. All Rights Reserved.</p>
+            <p className='copy font1'>&copy; {c_businessName} 2023. All Rights Reserved.</p>
         </div>
     )
 }

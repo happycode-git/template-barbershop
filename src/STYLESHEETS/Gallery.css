@@ -18,9 +18,13 @@
         display: grid;
         grid-template-columns: 1fr;
         margin-top: 1em;
+        gap: 1em
     }
     .gallery-img {
         width: 100%;
+        object-fit: cover;
+        object-position: center;
+        height: 50vh;
     }
 }
 

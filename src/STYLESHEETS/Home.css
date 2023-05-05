@@ -21,7 +21,7 @@
         padding: 1em;
     }
     .home-panel1-img {
-        background-image: url('../PHOTOS/shop.jpg');
+        background-image: url('../PHOTOS/barber1.jpeg');
         height: 45vh;
         background-position: center;
         background-size: cover;
@@ -29,7 +29,7 @@
         margin-top: 1em;
     }
     .home-panel1-img-right {
-        background-image: url('../PHOTOS/shop.jpg');
+        background-image: url('../PHOTOS/barber2.jpeg');
         height: 30vh;
         background-position: center;
         background-size: cover;
