@@ -22,6 +22,8 @@ import blog3img1 from '../PHOTOS/MAIN/barber23.jpg'
 import { setBlogPostState } from '../REDUX/SLICES/BlogPostSlice'
 import { useDispatch } from 'react-redux'
 import { firebaseGetPageViews } from '../FIREBASE/firebase'
+import { c_businessName, c_mainURL, c_meta_desc, c_meta_keywords } from '../Constants'
+import { Helmet } from 'react-helmet'
 
 export default function Blog() {
     const dispatch = useDispatch()
@@ -62,8 +64,8 @@ export default function Blog() {
         {
             id: 1,
             Date: "May 4, 2023",
-            Title: "Top 5 Grooming Services at Barber Knights: From Haircuts to Hot Towel Shaves",
-            Desc: "As a barbershop, Barber Knights provides excellent grooming services that cater to various hair types and styles. They have experienced barbers who take the time to listen to their customers' needs and offer suggestions based on their hair type, face shape, and personal style. Here are the top 5 services that Barber Knights offers:",
+            Title: `Top 5 Grooming Services at ${c_businessName}: From Haircuts to Hot Towel Shaves`,
+            Desc: `As a barbershop, ${c_businessName} provides excellent grooming services that cater to various hair types and styles. They have experienced barbers who take the time to listen to their customers' needs and offer suggestions based on their hair type, face shape, and personal style. Here are the top 5 services that ${c_businessName} offers:`,
             ImgPath: blog2img1,
             Author: "Master Bagel Jr.",
             Tags: "Haircut, Shave, Barber, Blade",
@@ -72,45 +74,45 @@ export default function Blog() {
                 <img src={blog2img1} className="blogpost-img" alt='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
                 <h3>Haircuts</h3>
                 <p>
-                    Barber Knights provides traditional and modern haircuts that are tailored to each customer's individual preferences. Their skilled barbers use scissors, clippers, and other tools to create the perfect haircut for each customer.
+                    {c_businessName} provides traditional and modern haircuts that are tailored to each customer's individual preferences. Their skilled barbers use scissors, clippers, and other tools to create the perfect haircut for each customer.
                 </p>
                 <br />
                 <img src={blog2img2} className="blogpost-img" alt='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
                 <br />
                 <h3>Beard Grooming</h3>
                 <p>
-                    For customers who have facial hair, Barber Knights offers a range of beard grooming services. Their barbers help customers achieve a neat and polished look through beard trims and shaves. They also offer beard oil treatments to keep the beard soft and conditioned.
+                    For customers who have facial hair, {c_businessName} offers a range of beard grooming services. Their barbers help customers achieve a neat and polished look through beard trims and shaves. They also offer beard oil treatments to keep the beard soft and conditioned.
                 </p>
                 <br />
                 <h3>Hot Towel Shave</h3>
-                <p>Barber Knights' hot towel shave is a classic grooming service that is both relaxing and refreshing. The use of hot towels and straight razors gives customers a smooth and close shave. They also provide beard lineups and detailing to complete the look.</p>
+                <p>{c_businessName}' hot towel shave is a classic grooming service that is both relaxing and refreshing. The use of hot towels and straight razors gives customers a smooth and close shave. They also provide beard lineups and detailing to complete the look.</p>
                 <br />
                 <h3>Hair Coloring</h3>
-                <p>Barber Knights offers professional hair coloring services using high-quality hair dyes that are safe and gentle on the hair. Customers can achieve a natural look or something more bold and daring with the help of their experienced barbers.</p>
+                <p>{c_businessName} offers professional hair coloring services using high-quality hair dyes that are safe and gentle on the hair. Customers can achieve a natural look or something more bold and daring with the help of their experienced barbers.</p>
                 <br />
                 <h3>Kids Haircuts</h3>
                 <p>
-                    Barber Knights provides haircuts for children. Their barbers are patient and skilled in working with children, making the experience as comfortable and enjoyable as possible.
+                    {c_businessName} provides haircuts for children. Their barbers are patient and skilled in working with children, making the experience as comfortable and enjoyable as possible.
                 </p>
                 <br />
                 <img src={blog2img3} className="blogpost-img" alt='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
                 <br />
                 <p>
-                    Barber Knights is a one-stop-shop for all your grooming needs. From haircuts to beard grooming, hot towel shaves, hair coloring, and kids haircuts, their experienced barbers provide top-notch services that cater to various hair types and styles. With their attention to detail and personalized approach, customers can trust that they will leave the shop looking and feeling their best. Visit Barber Knights and see for yourself why they are the go-to barbershop for quality grooming services in a friendly and welcoming environment. Book your appointment today and get ready for an exceptional grooming experience.
+                    {c_businessName} is a one-stop-shop for all your grooming needs. From haircuts to beard grooming, hot towel shaves, hair coloring, and kids haircuts, their experienced barbers provide top-notch services that cater to various hair types and styles. With their attention to detail and personalized approach, customers can trust that they will leave the shop looking and feeling their best. Visit {c_businessName} and see for yourself why they are the go-to barbershop for quality grooming services in a friendly and welcoming environment. Book your appointment today and get ready for an exceptional grooming experience.
                 </p>
             </div>
         },
         {
-            id: 0,
+            id: 2,
             Date: "January 21, 2023",
-            Title: "Introducing Our Brand New Website for Barber Knights: The Ultimate Guide to Our Services, Prices, and More",
-            Desc: "As a trusted and experienced barbershop, Barber Knights has always been dedicated to providing top-notch grooming services for our clients. Today, we are thrilled to announce the launch of our brand new website, which is designed to make it easier than ever for our clients to access our services and stay up-to-date on the latest trends and styles.",
+            Title: `Introducing Our Brand New Website for ${c_businessName}: The Ultimate Guide to Our Services, Prices, and More`,
+            Desc: `As a trusted and experienced barbershop, ${c_businessName} has always been dedicated to providing top-notch grooming services for our clients. Today, we are thrilled to announce the launch of our brand new website, which is designed to make it easier than ever for our clients to access our services and stay up-to-date on the latest trends and styles.`,
             ImgPath: blog3img1,
             Author: "Master Bagel Jr.",
             Tags: "Haircut, Shave, Barber, Blade",
             HTML: <div className='blogpost-wrap'>
                 <p>
-                    As a trusted and experienced barbershop, Barber Knights has always been dedicated to providing top-notch grooming services for our clients. Today, we are thrilled to announce the launch of our brand new website, which is designed to make it easier than ever for our clients to access our services and stay up-to-date on the latest trends and styles.
+                    As a trusted and experienced barbershop, {c_businessName} has always been dedicated to providing top-notch grooming services for our clients. Today, we are thrilled to announce the launch of our brand new website, which is designed to make it easier than ever for our clients to access our services and stay up-to-date on the latest trends and styles.
                 </p>
                 <h3>Our new website is packed with features that we think our clients will love. Here are just a few of the highlights:</h3>
                 <h4>Easy Online Booking</h4>
@@ -127,13 +129,13 @@ export default function Blog() {
                 </p>
                 <h4>News and Updates</h4>
                 <p>
-                    Stay up-to-date on the latest news and promotions at Barber Knights with our news and updates section. We'll be sharing tips and tricks for maintaining your look, as well as exclusive deals for our clients.
+                    Stay up-to-date on the latest news and promotions at {c_businessName} with our news and updates section. We'll be sharing tips and tricks for maintaining your look, as well as exclusive deals for our clients.
                 </p>
                 <h4>Online Store</h4>
                 <p>
                     Finally, we're excited to offer an online store where clients can purchase their favorite grooming products from the comfort of their own homes. From beard oils to hair styling products, we have everything you need to keep looking your best.
                 </p>
-                <p>We are so excited to share our new website with our clients, and we hope that you find it helpful and easy to use. As always, we remain committed to providing the highest level of service and quality to our clients. Book your appointment online today and come experience the Barber Knights difference for yourself!</p>
+                <p>We are so excited to share our new website with our clients, and we hope that you find it helpful and easy to use. As always, we remain committed to providing the highest level of service and quality to our clients. Book your appointment online today and come experience the {c_businessName} difference for yourself!</p>
 
             </div>
         },
@@ -167,6 +169,17 @@ export default function Blog() {
     }, [])
     return (
         <div className='main'>
+            <Helmet>
+                <title>Blog | {c_businessName}</title>
+                <meta name="description" content={`${c_meta_desc}`} />
+                <meta name="keywords" content={`${c_meta_keywords}`} />
+                <meta name="robots" content="index, follow" />
+                <link rel="canonical" href={`${c_mainURL}`} />
+                <meta property="og:title" content={`Home | ${c_businessName}`} />
+                <meta property="og:description" content={`${c_meta_desc}`} />
+                <meta property="og:url" content={`${c_mainURL}`} />
+                <meta property="og:image" content={`${c_mainURL}/src/PHOTOS/stock.png`} />
+            </Helmet>
             {/* NAGIVATION */}
             <Navigation />
             <div className='top'>

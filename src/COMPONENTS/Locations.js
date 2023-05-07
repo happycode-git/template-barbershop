@@ -7,6 +7,7 @@ import Footer from './UTILITIES/Footer'
 import Navigation from './UTILITIES/Navigation'
 import { Link } from 'react-router-dom'
 import { firebaseGetPageViews } from '../FIREBASE/firebase'
+import { c_businessName, c_mapSearchString } from '../Constants'
 // 
 
 export default function History() {
@@ -46,7 +47,7 @@ export default function History() {
                 <div className='location-pair'>
                     <div className='location-pair-split'>
                         <div>
-                            <h1>Bagel City Location</h1>
+                            <h1>{c_businessName}<br/>Bagel City Location</h1>
                             <h2>1234 Everything St.<br />Bagel City, CA<br />12345 US</h2>
 
                         </div>
@@ -65,34 +66,7 @@ export default function History() {
                     </div>
                     <div className='locations-wrap'>
                         <div className='locations-map'>
-                            <iframe className="map" id="gmap_canvas" src="https://maps.google.com/maps?q=Imperial%20Palace%20Japan&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-                            </iframe>
-                        </div>
-                    </div>
-                </div>
-                <div className='location-pair'>
-                    <div className='location-pair-split'>
-                        <div>
-                            <h1>Bagel City Location</h1>
-                            <h2>1234 Everything St.<br />Bagel City, CA<br />12345 US</h2>
-
-                        </div>
-                        <div>
-                            <h3>Hours:</h3>
-                            <ul>
-                                <li>Monday: 8:00 AM - 5:00 PM</li>
-                                <li>Tuesday: 8:00 AM - 5:00 PM</li>
-                                <li>Wednesday: 8:00 AM - 5:00 PM</li>
-                                <li>Thursday: 8:00 AM - 5:00 PM</li>
-                                <li>Friday: 8:00 AM - 5:00 PM</li>
-                                <li>Saturday: <span className='red'>Closed</span></li>
-                                <li>Sunday: <span className='red'>Closed</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className='locations-wrap'>
-                        <div className='locations-map'>
-                            <iframe className="map" id="gmap_canvas" src="https://maps.google.com/maps?q=Imperial%20Palace%20Japan&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                            <iframe className="map" id="gmap_canvas" src={`https://maps.google.com/maps?q=${c_mapSearchString}&t=&z=15&ie=UTF8&iwloc=&output=embed`} frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
                             </iframe>
                         </div>
                     </div>

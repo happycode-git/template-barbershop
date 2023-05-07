@@ -15,7 +15,8 @@ import { useDispatch } from 'react-redux'
 import { setLoadingState } from '../REDUX/SLICES/LoadingSlice'
 import { setSuccessState } from '../REDUX/SLICES/SuccessSlice'
 import { setFailureState } from '../REDUX/SLICES/FailureSlice'
-import { c_businessName, emailjs_contact_message, emailjs_fromEmail } from '../Constants'
+import { c_businessAddress, c_businessEmail, c_businessName, c_businessPhone, c_mainURL, c_meta_desc, c_meta_keywords, emailjs_contact_message, emailjs_fromEmail } from '../Constants'
+import { Helmet } from 'react-helmet'
 
 export default function Contact() {
     const dispatch = useDispatch()
@@ -96,6 +97,17 @@ export default function Contact() {
     }, [])
     return (
         <div className='main'>
+            <Helmet>
+                <title>Contact | {c_businessName}</title>
+                <meta name="description" content={`${c_meta_desc}`} />
+                <meta name="keywords" content={`${c_meta_keywords}`} />
+                <meta name="robots" content="index, follow" />
+                <link rel="canonical" href={`${c_mainURL}`} />
+                <meta property="og:title" content={`Contact | ${c_businessName}`} />
+                <meta property="og:description" content={`${c_meta_desc}`} />
+                <meta property="og:url" content={`${c_mainURL}`} />
+                <meta property="og:image" content={`${c_mainURL}/src/PHOTOS/stock.png`} />
+            </Helmet>
             {/* NAGIVATION */}
             <Navigation />
             <div className='top'>
@@ -135,13 +147,13 @@ export default function Contact() {
                     <div className='contact-right'>
                         <div className='contact-methods'>
                             <div className='contact-method'>
-                                <AiTwotonePhone className='contact-icon color3' /><p>123 456 7890</p>
+                                <AiTwotonePhone className='contact-icon color3' /><p>{c_businessPhone}</p>
                             </div>
                             <div className='contact-method'>
-                                <AiFillMail className='contact-icon color3' /><p>happycode.inbox@gmail.com</p>
+                                <AiFillMail className='contact-icon color3' /><p>{c_businessEmail}</p>
                             </div>
                             <div className='contact-method'>
-                                <FaMapMarkerAlt className='contact-icon color3' /><p>1234 Everything St, Bagel City CA, 12345</p>
+                                <FaMapMarkerAlt className='contact-icon color3' /><p>{c_businessAddress}</p>
                             </div>
                         </div>
                         <img src={img1} />

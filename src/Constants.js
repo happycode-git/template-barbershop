@@ -1,11 +1,18 @@
 export const c_businessName = "Barber Knights"
 export const c_businessDesc = "Barber Knights is a premier barber shop that offers exceptional grooming services to men in a welcoming and friendly atmosphere. Their team of skilled barbers provides traditional and modern haircuts, beard trims, and straight razor shaves. With years of experience and a commitment to quality, Barber Knights is the perfect place for any man looking to achieve a polished and professional look."
+export const c_businessAddress = "1234 Everything St, Bagel City CA, 12345"
+export const c_businessEmail = "happycode.inbox@gmail.com"
+export const c_businessPhone = "123 456 7890"
+export const c_mapSearchString = `${"Japan Imperial Palace".replaceAll(" ","%20")}`
 export const c_instagram = ""
 export const c_facebook = ""
 export const c_yelp = ""
 export const c_twitter = ""
 export const c_logoName = "stock.png"
 export const c_mainURL = "https://happy-code-templates.web.app"
+// 
+export const c_meta_desc = "Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online."
+export const c_meta_keywords = "web development, small business, low cost, maintenance benefits, Happy Code"
 // 
 export const firebase_configObj = {
     apiKey: "AIzaSyBvFjW_wMjEFE-SESveqdk_U0328bAdFww",

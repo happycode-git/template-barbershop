@@ -11,6 +11,7 @@ import { firebaseGetPageViews } from '../FIREBASE/firebase'
 import img1 from '../PHOTOS/portrait1.jpeg'
 import img2 from '../PHOTOS/portrait2.jpeg'
 import img3 from '../PHOTOS/portrait3.jpeg'
+import { c_businessName } from '../Constants'
 
 export default function Team() {
     function openNav() {
@@ -68,7 +69,7 @@ export default function Team() {
             <div className="padding font1">
                 <h1 className='page-title color3'>Meet our team</h1>
                 <p className='team-sub'>
-                At Barber Knights, we pride ourselves on having an exceptional team of skilled barbers who are passionate about their craft. Our barbers are experienced in working with all hair types and styles, and they take the time to listen to our customers' needs and preferences. They are dedicated to providing a personalized and high-quality grooming experience, ensuring that every customer leaves our shop feeling confident and satisfied with their new look.
+                At {c_businessName}, we pride ourselves on having an exceptional team of skilled barbers who are passionate about their craft. Our barbers are experienced in working with all hair types and styles, and they take the time to listen to our customers' needs and preferences. They are dedicated to providing a personalized and high-quality grooming experience, ensuring that every customer leaves our shop feeling confident and satisfied with their new look.
                 </p>
                 <br />
                 <div className='team-members'>
