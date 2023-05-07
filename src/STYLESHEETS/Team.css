@@ -52,7 +52,7 @@
 @media only screen and (min-width: 1000px) {
     .team-members {
         width: 80%;
-        gap: 3em
+        gap: 2em
     }
     .team-sub {
         width: 80%;

@@ -33,19 +33,19 @@ export default function Team() {
     const team = [
         {
             id: 0,
-            Name: "Mrs. Everything Bagel",
+            Name: "Camila Mendoza",
             Position: "Hair Extraordinaire",
             Img: img1
         },
         {
             id: 1,
-            Name: "Mr. Everything Bagel",
+            Name: "George Torres",
             Position: "Shaving Specialist",
             Img: img2
         },
         {
             id: 2,
-            Name: "Mr. Everything Bagel",
+            Name: "Benjamin Roland",
             Position: "Clipper Expert",
             Img: img3
         },

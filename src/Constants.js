@@ -1,18 +1,20 @@
 export const c_businessName = "Barber Knights"
-export const c_businessDesc = "Barber Knights are dedicated to provide the best experience when getting haircut, shave, and wax. We take pride in using our quality tools and training to get you to look fresh. Trust in the Barber Knights to bring out a new you."
+export const c_businessDesc = "Barber Knights is a premier barber shop that offers exceptional grooming services to men in a welcoming and friendly atmosphere. Their team of skilled barbers provides traditional and modern haircuts, beard trims, and straight razor shaves. With years of experience and a commitment to quality, Barber Knights is the perfect place for any man looking to achieve a polished and professional look."
 export const c_instagram = ""
 export const c_facebook = ""
 export const c_yelp = ""
 export const c_twitter = ""
+export const c_logoName = "stock.png"
+export const c_mainURL = "https://happy-code-templates.web.app"
 // 
 export const firebase_configObj = {
-    apiKey: "AIzaSyC6YJnDc3N9Y28Xpi8HPfCMiwFIMsB62ew",
-  authDomain: "barber-shops-template.firebaseapp.com",
-  projectId: "barber-shops-template",
-  storageBucket: "barber-shops-template.appspot.com",
-  messagingSenderId: "59226057937",
-  appId: "1:59226057937:web:2a187288f7a54bc13ba9f0",
-  measurementId: "G-4HWW35LTL7"
+    apiKey: "AIzaSyBvFjW_wMjEFE-SESveqdk_U0328bAdFww",
+    authDomain: "happy-code-templates.firebaseapp.com",
+    projectId: "happy-code-templates",
+    storageBucket: "happy-code-templates.appspot.com",
+    messagingSenderId: "754511528809",
+    appId: "1:754511528809:web:65a693fa61dbb4a6ebf3f8",
+    measurementId: "G-R31943N4V6"
 }
 // 
 export const emailjs_publicKey = "eaOYb8X6nqSrLTHBS"
@@ -20,11 +22,18 @@ export const emailjs_serviceID = "service_xq1rj6f"
 export const emailjs_fromEmail = "happycode.inbox@gmail.com"
 // 
 export const emailjs_schedule_templateID = "template_65xnt8b"
+export const emailjs_mySchedule_templateID = "template_3k7viy5"
 export const emailjs_schedule_message = `Thank you for scheduling an appointment with ${c_businessName}. Please make sure to arrive 10 minutes before your confirmed time to not lose your place in line. Otherwise, you can schedule another time for a different date.`
 // 
 export const emailjs_contact_templateID = "template_6ez9gil"
-export const emailjs_myContact_templateID = ""
+export const emailjs_myContact_templateID = "template_6v4x43c"
 export const emailjs_contact_message = `Your inquiry has been successfully received. A follow up email will be sent shortly.`
+// 
+export const emailjs_quotes_templateID = "template_b3g78oj"
+export const emailjs_myQuotes_templateID = "template_m433xgd"
+//
+export const emailjs_shop_templateID = "template_xkveshb"
+export const emailjs_myShop_templateID = "template_whvwdyo"
 // 
 export const square_appID = "sandbox-sq0idb-en5EWhNy5BmN4JbNHzXBsw"
 export const square_locationID = "LVJYVW6F0ECCC"

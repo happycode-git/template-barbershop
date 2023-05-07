@@ -37,6 +37,7 @@ export default function Navigation() {
                 <TfiClose className='nav-icon' onClick={closeNav} />
             </div>
             <div className='nav-links font1'>
+            <Link className='nav-link color3' to="/schedule">Schedule</Link>
                 <Link className='nav-link color2' to="/about">About Us</Link>
                 <Link className='nav-link color2' to="/services">Services</Link>
                 <Link className='nav-link color2' to="/team">Our Barbers</Link>

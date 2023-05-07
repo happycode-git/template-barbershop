@@ -52,7 +52,7 @@ export default function About() {
 
             <div className='top'>
                 <Link to="/login"><img src={logo} /></Link>
-                <RxHamburgerMenu className='top-icon color4' onClick={openNav} />
+                <RxHamburgerMenu className='top-icon' onClick={openNav} />
             </div>
             <div className='dashboard'>
                 <h1 className='page-title-sm dashboard-head color3'>Dashboard</h1>

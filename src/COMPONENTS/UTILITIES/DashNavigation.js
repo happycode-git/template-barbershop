@@ -35,18 +35,18 @@ export default function DashNavigation() {
         window.scrollTo(0, 0)
     }, [])
     return (
-        <div className='nav-body bg2'>
+        <div className='nav-body bg1'>
             <div className='nav-top'>
                 <img src={logo} />
-                <TfiClose className='nav-icon color1' onClick={closeNav} />
+                <TfiClose className='nav-icon color2' onClick={closeNav} />
             </div>
             <div className='nav-links font1'>
-                <Link className='nav-link color1' to="/dashboard">Dashboard</Link>
-                <Link className='nav-link color1' to="/scheduleadmin">Schedule</Link>
+                <Link className='nav-link color2' to="/dashboard">Dashboard</Link>
+                <Link className='nav-link color2' to="/scheduleadmin">Schedule</Link>
                 <br />
                 <button onClick={() => { firebaseSignOut(dispatch); navigate('/login') }} className='dash-out no-bg no-border red'>Sign Out</button>
             </div>
-            <p className='copy font1 color1'>&copy; {c_businessName}. All Rights Reserved.</p>
+            <p className='copy font1 color2'>&copy; {c_businessName}. All Rights Reserved.</p>
         </div>
     )
 }

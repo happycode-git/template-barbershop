@@ -15,8 +15,9 @@ import { getDayOfWeek_Word, getMonth_Word } from '../Global'
 import { setLoadingState } from '../REDUX/SLICES/LoadingSlice'
 import { setSuccessState } from '../REDUX/SLICES/SuccessSlice'
 import { setFailureState } from '../REDUX/SLICES/FailureSlice'
-import { c_businessName, emailjs_fromEmail, emailjs_schedule_message } from '../Constants'
+import { c_businessName, c_mainURL, emailjs_fromEmail, emailjs_schedule_message } from '../Constants'
 import { setEventTypesState } from '../REDUX/SLICES/EventTypesSlice'
+// import { Helmet } from 'react-helmet'
 
 export default function Schedule() {
     const eventTypes = useSelector((state) => state.eventTypes.value)
@@ -42,8 +43,10 @@ export default function Schedule() {
 
     const [types, setTypes] = useState([])
     const [slots, setSlots] = useState([])
+    const [workers, setWorkers] = useState([])
     const [chosenDate, setChosenDate] = useState("")
     const [chosenService, setChosenService] = useState("")
+    const [chosenWorker, setChosenWorker] = useState("")
     const [chosenSlotInfo, setChosenSlotInfo] = useState({})
     const [showDetails, setShowDetails] = useState(false)
     const [showModal, setShowModal] = useState(false)
@@ -67,6 +70,7 @@ export default function Schedule() {
         const chosenDate = document.querySelector("#dpDay").value.replace(/-/g, '\/')
         if (chosenDate != "") {
             const type = document.querySelector('#ddType').value.split(" ~ ")[0]
+
             var chosenType = {}
             for (var i in eventTypes) {
 
@@ -99,21 +103,21 @@ export default function Schedule() {
                     const tStart1 = full.getTime()
                     const tEnd1 = (full.getTime()) + (duration * 60)
 
-
                     if (scheduledEvents.length > 0) {
                         var taken = false
                         for (var j in scheduledEvents) {
-                            const eve = scheduledEvents[j]
-                            const tStart2 = eve.Start.seconds
-                            const tEnd2 = eve.End.seconds
+                            if (scheduledEvents[j].Worker == chosenWorker) {
+                                const eve = scheduledEvents[j]
+                                const tStart2 = eve.Start.seconds
+                                const tEnd2 = eve.End.seconds
 
-                            const res1 = (tStart1 >= tStart2 && tStart1 < tEnd2)
-                            const res2 = (tEnd1 > tStart2 && tEnd1 < tEnd2)
+                                const res1 = (tStart1 >= tStart2 && tStart1 < tEnd2)
+                                const res2 = (tEnd1 > tStart2 && tEnd1 < tEnd2)
 
-                            if (res1 || res2) {
-                                taken = true
+                                if (res1 || res2) {
+                                    taken = true
+                                }
                             }
-
                         }
                         if (!taken) {
                             const thing = new Date(tStart1 * 1000)
@@ -148,11 +152,11 @@ export default function Schedule() {
             Duration: chosenService.Duration,
             Month: month,
             Day: day,
-            Year: year
+            Year: year,
+            Worker: chosenWorker
         }
         setChosenSlotInfo(slotInfo)
         setShowDetails(true)
-        console.log(slotInfo)
     }
     const sendConfirmation = () => {
         dispatch(setLoadingState(true))
@@ -168,7 +172,7 @@ export default function Schedule() {
                 Start: start,
                 Email: email,
                 Type: chosenSlotInfo.Service,
-
+                Worker: chosenWorker
             }
             var templateParams = {
                 from_name: c_businessName,
@@ -176,10 +180,20 @@ export default function Schedule() {
                 date_string: `${chosenSlotInfo.DayOfWeek}, ${chosenSlotInfo.Month} ${chosenSlotInfo.Day} ${chosenSlotInfo.Year} @ ${chosenSlotInfo.Slot}`,
                 to_email: email,
                 message: emailjs_schedule_message,
-                from_email: emailjs_fromEmail
+                from_email: emailjs_fromEmail,
+                reply_to: emailjs_fromEmail
             };
+            const myParams = {
+                from_name: c_businessName,
+                to_name: name,
+                date_string: `${chosenSlotInfo.DayOfWeek}, ${chosenSlotInfo.Month} ${chosenSlotInfo.Day} ${chosenSlotInfo.Year} @ ${chosenSlotInfo.Slot}`,
+                to_email: emailjs_fromEmail,
+                message: "Confirmation has been sent to the customer.",
+                from_email: email,
+                reply_to: email
+            }
 
-            createScheduledEvent(args, templateParams)
+            createScheduledEvent(args, templateParams, myParams)
                 .then(() => {
                     dispatch(setLoadingState(false))
                     dispatch(setSuccessState(true))
@@ -206,25 +220,51 @@ export default function Schedule() {
         }
 
     }
+    const selectWorkers = () => {
+        const thing = document.querySelector('#ddType').value
+        for (var i = 0; i < types.length; i = i + 1) {
+            if (types[i].Type == thing.split(' ~ ')[0]) {
+                console.log(types[i].Workers.split(','))
+                const workers = types[i].Workers.split(',')
+                setWorkers(workers)
+            }
+        }
+        setChosenService(thing)
+    }
+    const selectWorker = () => {
+        const worker = document.querySelector('#ddWorker').value
+        setChosenWorker(worker)
+        setSlots([])
+    }
 
     useEffect(() => {
         closeNav()
         window.scrollTo(0, 0)
         firebaseGetPageViews({ Name: "Schedule", Views: 0 })
         getEventTypes(dispatch)
-        console.log(chosenDate)
     }, [])
     return (
         <div className='main'>
+            {/* <Helmet>
+                <title>Schedule | Happy Code Template</title>
+                <meta name="description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
+                <meta name="keywords" content="web development, small business, low cost, maintenance benefits, Happy Code" />
+                <meta name="robots" content="index, follow" />
+                <link rel="canonical" href={`${c_mainURL}`} />
+                <meta property="og:title" content="Schedule | Happy Code Template" />
+                <meta property="og:description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
+                <meta property="og:url" content={`${c_mainURL}`} />
+                <meta property="og:image" content={`${c_mainURL}/src/PHOTOS/stock.png`} />
+            </Helmet> */}
             {/* NAGIVATION */}
             <Navigation />
             <div className='top'>
                 <Link to="/"><img src={logo} /></Link>
-                <RxHamburgerMenu className='top-icon color4' onClick={openNav} />
+                <RxHamburgerMenu className='top-icon' onClick={openNav} />
             </div>
             {/* BODY */}
             <div className="schedule font1">
-                <h1 className='page-title color3'>Schedule</h1>
+                <h1 className='page-title'>Schedule</h1>
                 <br />
                 {
                     showDetails ?
@@ -239,7 +279,7 @@ export default function Schedule() {
                                 <p>We would like to get some information from you so that we know who is scheduling and where to send the confirmation to.</p>
                                 <br />
                                 <h2 className='schedule-rev-date'>{chosenSlotInfo.DayOfWeek}, {chosenSlotInfo.Month} {chosenSlotInfo.Day} {chosenSlotInfo.Year}<br /> @ {chosenSlotInfo.Slot}</h2>
-                                <h3 className='schedule-rev-details'>{chosenSlotInfo.Service} - {chosenSlotInfo.Duration} minutes</h3>
+                                <h3 className='schedule-rev-details color3'>{chosenSlotInfo.Service} - {chosenSlotInfo.Duration} minutes</h3>
                                 <br />
                                 <div className='schedule-rev-pair'>
                                     <label>Name</label>
@@ -250,7 +290,7 @@ export default function Schedule() {
                                     <label>Email</label>
                                     <input className='schedule-input border2' id="tbEmail" type="email" placeholder='jdoe@happy.com' />
                                 </div>
-                                <button onClick={() => { sendConfirmation() }} className='schedule-rev-btn no-border bg1 color2'>Confirm Date/Time</button>
+                                <button onClick={() => { sendConfirmation() }} className='schedule-rev-btn no-border bg3 color2'>Confirm Date/Time</button>
                             </div>
                         </div> : <div></div>
                 }
@@ -264,11 +304,12 @@ export default function Schedule() {
                             <h2 className='schedule-pick'>Pick a day:</h2>
                             <input type="date" className="schedule-pick-date border2" id="dpDay" onChange={getDate} />
                         </div>
+
                         {
                             chosenDate != "" ?
                                 <div>
                                     <h2 className='schedule-pick'>Pick a Service:</h2>
-                                    <select id="ddType" className='schedule-pick-dd border2'>
+                                    <select id="ddType" className='schedule-pick-dd border2' onChange={selectWorkers}>
                                         <option>Select one</option>
                                         {
                                             types.map((type, i) => {
@@ -281,27 +322,48 @@ export default function Schedule() {
                                 </div> : <div></div>
                         }
                         {
-                            chosenService.Type != undefined ?
-                                <p className='type-desc no-bg color2'>{chosenService.Desc}</p> : <div></div>
+                            workers.length > 0 != "" ?
+                                <div>
+                                    <h2 className='schedule-pick'>Barbers:</h2>
+                                    <select id="ddWorker" className='schedule-pick-dd border2' onChange={selectWorker}>
+                                        <option>Select one</option>
+                                        {
+                                            workers.map((worker, i) => {
+                                                return (
+                                                    <option key={i}>{worker}</option>
+                                                )
+                                            })
+                                        }
+                                    </select>
+                                </div> : <div></div>
                         }
-                        <button className='schedule-pick-btn color2 no-border bg3' onClick={getAvailableTimes}>Get Available Times</button>
+                        {
+                            chosenService.Type != undefined && chosenWorker != 'Select one' && chosenWorker != "" ?
+                                <p className='type-desc bg3 color2'>{chosenService.Desc}</p> : <div></div>
+                        }
+                        {
+                            chosenWorker != "Select one" && chosenWorker != "" ?
+                                <button className='schedule-pick-btn bg3 color2 no-border' onClick={getAvailableTimes}>Get Available Times</button> : <div></div>
+                        }
                     </div>
                     <div className='schedule-right'>
                         {
                             slots.map((slot, i) => {
-                                return (
-                                    <div className='schedule-slot' key={i}>
-                                        <button onClick={() => { chooseSlot(slot) }} className='border1 no-bg color2'>{slot}</button>
-                                    </div>
-                                )
+                                if (chosenWorker != 'Select one' && chosenWorker != "") {
+                                    return (
+                                        <div className='schedule-slot' key={i}>
+                                            <button onClick={() => { chooseSlot(slot) }} className='border1 no-bg color3'>{slot}</button>
+                                        </div>
+                                    )
+                                }
                             })
                         }
                     </div>
                 </div>
             </div>
-
+            <br /><br /><br /><br />
             {/* FOOTER */}
-            <div className='bottom' style={chosenService.Type == undefined ? { position: "absolute", bottom: "0", right: "0", left: "0" } : {}}>
+            <div className='bottom'>
                 <Footer />
             </div>
         </div>
