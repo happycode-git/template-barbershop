@@ -6,6 +6,8 @@ import { RxHamburgerMenu } from 'react-icons/rx'
 // 
 import logo from '../PHOTOS/stock.png'
 import img1 from '../PHOTOS/shop.jpg'
+import img2 from '../PHOTOS/MAIN/barber14.jpg'
+import img3 from '../PHOTOS/MAIN/barber13.jpg'
 // 
 import { Link, useNavigate } from 'react-router-dom'
 import Footer from './UTILITIES/Footer'
@@ -62,10 +64,10 @@ export default function Home() {
                 <div className='home-panel1'>
                     <div>
                         <h1 className=''><span className='color3'>{c_businessName}</span>,<br/> fresh haircuts and shaves.</h1>
-                        <div className='home-panel1-img'></div>
+                        <img src={img2} className='home-panel1-img' />
                     </div>
                     <div className='home-right'>
-                        <div className='home-panel1-img-right'></div>
+                        <img src={img3} className='home-panel1-img-right' />
                         <div className='home-panel1-right-info'>
                             <h2 className='home-panel1-sub color3'>A clean cut is everything.</h2>
                             <p className='home-panel1-text'>
