@@ -1,5 +1,5 @@
 export const c_businessName = "Barber Knights"
-export const c_businessDesc = "Barber Knights is a premier barber shop that offers exceptional grooming services to men in a welcoming and friendly atmosphere. Their team of skilled barbers provides traditional and modern haircuts, beard trims, and straight razor shaves. With years of experience and a commitment to quality, Barber Knights is the perfect place for any man looking to achieve a polished and professional look."
+export const c_businessDesc = `${c_businessName} is a premier barber shop that offers exceptional grooming services to men in a welcoming and friendly atmosphere. Their team of skilled barbers provides traditional and modern haircuts, beard trims, and straight razor shaves. With years of experience and a commitment to quality, ${c_businessName} is the perfect place for any man looking to achieve a polished and professional look.`
 export const c_businessAddress = "1234 Everything St, Bagel City CA, 12345"
 export const c_businessEmail = "happycode.inbox@gmail.com"
 export const c_businessPhone = "123 456 7890"
