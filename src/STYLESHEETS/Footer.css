@@ -99,7 +99,7 @@
 
 @media only screen and (min-width: 800px) {
     .footer-desc {
-        width: 40vw;
+        width: 70vw;
     }
 
     .footer-links {
@@ -116,7 +116,7 @@
         padding: 0;
     }
     .footer-desc {
-        width: 30vw;
+        width: 60vw;
     }
     .social-link {
         font-size: 3em;

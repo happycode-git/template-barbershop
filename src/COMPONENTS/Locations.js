@@ -7,7 +7,7 @@ import Footer from './UTILITIES/Footer'
 import Navigation from './UTILITIES/Navigation'
 import { Link } from 'react-router-dom'
 import { firebaseGetPageViews } from '../FIREBASE/firebase'
-import { c_businessName, c_mapSearchString } from '../Constants'
+import { c_businessAddress, c_businessName, c_mapSearchString } from '../Constants'
 // 
 
 export default function History() {
@@ -47,8 +47,8 @@ export default function History() {
                 <div className='location-pair'>
                     <div className='location-pair-split'>
                         <div>
-                            <h1>{c_businessName}<br/>Bagel City Location</h1>
-                            <h2>1234 Everything St.<br />Bagel City, CA<br />12345 US</h2>
+                            <h1>{c_businessName}<br/>San Diego Location</h1>
+                            <h2>{c_businessAddress}</h2>
 
                         </div>
                         <div>
